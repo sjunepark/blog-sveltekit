@@ -27,9 +27,10 @@
 					<Button
 						variant="outline"
 						size="icon"
-						class="group rounded-full bg-white/90 px-3 py-2 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur transition dark:bg-zinc-800/90 dark:ring-white/10 dark:hover:ring-white/20"
-						><HamburgerMenu /></Button
+						class="group rounded-full bg-white/90 px-3 py-2 shadow-lg shadow-foreground/5 ring-1 ring-border/5 backdrop-blur transition"
 					>
+						<HamburgerMenu />
+					</Button>
 				</Popover.Trigger>
 				<Popover.Content>Place content for the popover here.</Popover.Content>
 			</Popover.Root>
@@ -37,8 +38,13 @@
 		<!--DesktopNavigation-->
 		<nav class="hidden sm:block">
 			<ul class="flex rounded-full px-3 font-medium shadow-md shadow-border ring-1 ring-border">
-				<li><a href="/" class="block px-3 py-2">About</a></li>
-				<li><a href="/" class="block px-3 py-2">Projects</a></li>
+				<li>
+					<a href="/" class="block px-3 py-2 transition duration-200 hover:text-primary">About</a>
+				</li>
+				<li>
+					<a href="/" class="block px-3 py-2 transition duration-200 hover:text-primary">Projects</a
+					>
+				</li>
 			</ul>
 		</nav>
 		<div class="flex flex-1 justify-end">
