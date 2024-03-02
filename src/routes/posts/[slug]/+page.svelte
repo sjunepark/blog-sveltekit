@@ -9,7 +9,7 @@
 	<meta property="og:title" content={data.meta.title} />
 </svelte:head>
 
-<article>
+<article class="prose prose-sm prose-stone mx-auto dark:prose-invert sm:prose-base lg:prose-lg">
 	<!-- Title -->
 	<hgroup>
 		<h1>{data.meta.title}</h1>
@@ -24,7 +24,7 @@
 	</div>
 
 	<!-- Post -->
-	<div class="prose prose-stone dark:prose-invert">
+	<div class="">
 		<svelte:component this={data.content} />
 	</div>
 </article>
