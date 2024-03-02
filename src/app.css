@@ -72,4 +72,8 @@
 	.full-bleed {
 		grid-column: 1 / -1;
 	}
+
+	* {
+		@apply focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring;
+	}
 }

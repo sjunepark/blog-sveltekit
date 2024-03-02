@@ -4,10 +4,12 @@
 	import ThemeSwitcher from './navbar/ThemeSwitcher.svelte';
 	// noinspection ES6UnusedImports
 	import * as Popover from '$lib/shadcn/ui/popover';
-	import { Button } from '$lib/shadcn/ui/button';
+	import { buttonVariants } from '$lib/shadcn/ui/button';
 	import HamburgerMenu from 'svelte-radix/HamburgerMenu.svelte';
+	import { cn } from '$lib/utils';
 
 	let { children } = $props();
+	const { variant, size } = buttonVariants.variants;
 </script>
 
 <ModeWatcher />
@@ -25,13 +27,9 @@
 			<nav class="sm:hidden">
 				<Popover.Root>
 					<Popover.Trigger>
-						<Button
-							variant="outline"
-							size="icon"
-							class="group rounded-full bg-white/90 px-3 py-2 shadow-lg shadow-foreground/5 ring-1 ring-border/5 backdrop-blur transition"
-						>
-							<HamburgerMenu />
-						</Button>
+						<div class={cn(variant.icon, size.icon_lg, 'group flex items-center justify-center')}>
+							<HamburgerMenu class="h-5 w-5 group-hover:fill-primary" />
+						</div>
 					</Popover.Trigger>
 					<Popover.Content>Place content for the popover here.</Popover.Content>
 				</Popover.Root>
@@ -40,10 +38,16 @@
 			<nav class="hidden sm:block">
 				<ul class="flex rounded-full px-3 font-medium shadow-md shadow-border ring-1 ring-border">
 					<li>
-						<a href="/" class="block px-3 py-2 transition duration-200 hover:text-primary">About</a>
+						<a
+							href="/"
+							class="block px-3 py-2 transition duration-200 hover:text-primary focus-visible:text-primary"
+							>About</a
+						>
 					</li>
 					<li>
-						<a href="/" class="block px-3 py-2 transition duration-200 hover:text-primary"
+						<a
+							href="/"
+							class="block px-3 py-2 transition duration-200 hover:text-primary focus-visible:text-primary"
 							>Projects</a
 						>
 					</li>
