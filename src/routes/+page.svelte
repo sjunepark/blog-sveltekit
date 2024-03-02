@@ -1,6 +1,6 @@
 <script lang="ts"></script>
 
-<article class="prose mx-auto dark:prose-invert lg:prose-lg">
+<article class="prose prose-stone mx-auto dark:prose-invert lg:prose-lg">
 	<h1>Welcome to SvelteKit</h1>
 	<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
 	<p>

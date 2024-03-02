@@ -59,7 +59,8 @@ const config = {
 			},
 			gridColumn: {
 				container: '1fr min(65ch, 100%) 1fr'
-			}
+			},
+			typography: {}
 		}
 	},
 	plugins: [require('@tailwindcss/typography')]
