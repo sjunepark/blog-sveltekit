@@ -1,11 +1,12 @@
 import adapter from '@sveltejs/adapter-cloudflare';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 import { mdsvex, escapeSvelte } from 'mdsvex';
-import type { MdsvexOptions } from 'mdsvex';
 import { getHighlighter } from 'shiki';
-import type { Config } from '@sveltejs/kit';
 
-const mdsvexOptions: MdsvexOptions = {
+/**
+ * @type {import('mdsvex').MdsvexOptions}
+ */
+const mdsvexOptions = {
 	extensions: ['.md'],
 	highlight: {
 		highlighter: async (code, lang = 'text') => {
@@ -21,7 +22,10 @@ const mdsvexOptions: MdsvexOptions = {
 	}
 };
 
-const config: Config = {
+/**
+ * @type {import('@sveltejs/kit').Config}
+ */
+const config = {
 	extensions: ['.svelte', '.md'],
 	// Consult https://kit.svelte.dev/docs/integrations#preprocessors
 	// for more information about preprocessors
