@@ -60,7 +60,21 @@ const config = {
 			gridColumn: {
 				container: '1fr min(65ch, 100%) 1fr'
 			},
-			typography: {}
+			typography: (theme) => ({
+				DEFAULT: {
+					css: {
+						blockquote: {
+							fontStyle: 'normal'
+						},
+						'blockquote p:first-of-type::before': {
+							content: ''
+						},
+						'blockquote p:last-of-type::after': {
+							content: ''
+						}
+					}
+				}
+			})
 		}
 	},
 	plugins: [require('@tailwindcss/typography')]

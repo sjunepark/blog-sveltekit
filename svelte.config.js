@@ -7,7 +7,7 @@ import { getHighlighter } from 'shiki';
  * @type {import('mdsvex').MdsvexOptions}
  */
 const mdsvexOptions = {
-	extensions: ['.mdx'],
+	extensions: ['.md'],
 	highlight: {
 		highlighter: async (code, lang = 'text') => {
 			const highlighter = await getHighlighter({
@@ -26,7 +26,7 @@ const mdsvexOptions = {
  * @type {import('@sveltejs/kit').Config}
  */
 const config = {
-	extensions: ['.svelte', '.mdx'],
+	extensions: ['.svelte', '.md'],
 	// Consult https://kit.svelte.dev/docs/integrations#preprocessors
 	// for more information about preprocessors
 	preprocess: [vitePreprocess(), mdsvex(mdsvexOptions)],
