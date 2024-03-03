@@ -12,7 +12,7 @@ const mdsvexOptions = {
 		highlighter: async (code, lang = 'text') => {
 			const highlighter = await getHighlighter({
 				themes: ['monokai'],
-				langs: ['javascript', 'typescript', 'go']
+				langs: ['javascript', 'typescript', 'go', 'plaintext']
 			});
 
 			await highlighter.loadLanguage('javascript', 'typescript', 'go');
