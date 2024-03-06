@@ -1,10 +1,22 @@
 import adapter from '@sveltejs/adapter-cloudflare';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
-import { mdsvex } from 'mdsvex';
+import { mdsvex, escapeSvelte } from 'mdsvex';
+import { getHighlighter } from 'shiki';
 
 /** @type {import('mdsvex').MdsvexOptions} */
 const mdsvexOptions = {
-	extensions: ['.md']
+	extensions: ['.md'],
+	highlight: {
+		highlighter: async (code, lang = 'text') => {
+			const highlighter = await getHighlighter({
+				themes: ['dracula-soft'],
+				langs: ['javascript', 'typescript', 'go']
+			});
+			await highlighter.loadLanguage('javascript', 'typescript', 'go');
+			const html = escapeSvelte(highlighter.codeToHtml(code, { lang, theme: 'dracula-soft' }));
+			return `{@html \`${html}\`}`;
+		}
+	}
 };
 
 /**
