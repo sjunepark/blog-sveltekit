@@ -8,7 +8,6 @@
 	import HamburgerMenu from 'svelte-radix/HamburgerMenu.svelte';
 	import { cn } from '$lib/utils';
 
-	let { children } = $props();
 	const { variant, size } = buttonVariants.variants;
 </script>
 
@@ -59,6 +58,6 @@
 		</div>
 	</header>
 	<main class="mx-auto w-full px-4 sm:px-8 md:px-12">
-		{@render children()}
+		<slot />
 	</main>
 </div>
