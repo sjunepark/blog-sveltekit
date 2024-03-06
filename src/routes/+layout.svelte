@@ -1,12 +1,18 @@
 <script lang="ts">
 	import '../app.css';
+
 	import { ModeWatcher } from 'mode-watcher';
-	import ThemeSwitcher from './navbar/ThemeSwitcher.svelte';
+	import HamburgerMenu from 'svelte-radix/HamburgerMenu.svelte';
+
 	// noinspection ES6UnusedImports
 	import * as Popover from '$lib/shadcn/ui/popover';
 	import { buttonVariants } from '$lib/shadcn/ui/button';
-	import HamburgerMenu from 'svelte-radix/HamburgerMenu.svelte';
 	import { cn } from '$lib/utils';
+	import ThemeSwitcher from './navbar/ThemeSwitcher.svelte';
+
+	import PageTransition from './transition.svelte';
+
+	export let data;
 
 	const { variant, size } = buttonVariants.variants;
 </script>
@@ -45,9 +51,9 @@
 					</li>
 					<li>
 						<a
-							href="/"
+							href="/posts/1"
 							class="block px-3 py-2 transition duration-200 hover:text-primary focus-visible:text-primary"
-							>Projects</a
+							>First post</a
 						>
 					</li>
 				</ul>
@@ -58,6 +64,8 @@
 		</div>
 	</header>
 	<main class="mx-auto w-full px-4 sm:px-8 md:px-12">
-		<slot />
+		<PageTransition url={data.url}>
+			<slot />
+		</PageTransition>
 	</main>
 </div>
