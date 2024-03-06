@@ -16,10 +16,10 @@
 			aria-label="Switch light/dark theme"
 			builders={[builder]}
 			class="group"
-			onmouseleave={() => {
+			on:mouseleave={() => {
 				hovered = false;
 			}}
-			onmouseover={() => {
+			on:mouseenter={() => {
 				hovered = true;
 			}}
 			size="icon_lg"
