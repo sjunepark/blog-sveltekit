@@ -6,7 +6,8 @@ export type Post = {
 	title: string;
 	slug: string;
 	description: string;
-	date: string;
+	created: string;
+	updated: string;
 	categories: Categories[];
 	published: boolean;
 };
@@ -14,7 +15,7 @@ export type Post = {
 async function getPosts() {
 	let posts: Post[] = [];
 
-	const paths = import.meta.glob('/src/posts/*.md', { eager: true });
+	const paths = import.meta.glob('/src/routes/posts/contents/*.md', { eager: true });
 
 	for (const path in paths) {
 		const file = paths[path];
@@ -28,7 +29,7 @@ async function getPosts() {
 	}
 
 	posts = posts.sort(
-		(first, second) => new Date(second.date).getTime() - new Date(first.date).getTime()
+		(first, second) => new Date(second.created).getTime() - new Date(first.created).getTime()
 	);
 
 	return posts;
