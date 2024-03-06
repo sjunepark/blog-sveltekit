@@ -5,7 +5,7 @@
 </script>
 
 {#key url}
-	<div class="w-fullH h-full" in:fade>
+	<div class="h-full w-full" in:fade>
 		<slot />
 	</div>
 {/key}
