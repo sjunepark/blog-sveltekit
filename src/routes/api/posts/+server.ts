@@ -1,16 +1,5 @@
 import { json } from '@sveltejs/kit';
-
-export type Categories = 'sveltekit' | 'svelte';
-
-export type Post = {
-	title: string;
-	slug: string;
-	description: string;
-	created: string;
-	updated: string;
-	categories: Categories[];
-	published: boolean;
-};
+import type { Post } from '$lib/types';
 
 async function getPosts() {
 	let posts: Post[] = [];
