@@ -4,6 +4,11 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+dependencies:
+  '@formkit/tempo':
+    specifier: ^0.0.15
+    version: 0.0.15
+
 devDependencies:
   '@sveltejs/adapter-cloudflare':
     specifier: ^4.1.0
@@ -393,6 +398,10 @@ packages:
   /@floating-ui/utils@0.2.1:
     resolution: {integrity: sha512-9TANp6GPoMtYzQdt54kfAyMmz1+osLlXdg2ENroU7zzrtflTLrrC/lgrIfaSe+Wu0b89GKccT7vxXA0MoAIO+Q==}
     dev: true
+
+  /@formkit/tempo@0.0.15:
+    resolution: {integrity: sha512-jDz5yrCAG2gPoalgoqKUtJWOgdLGCtHgBYLZBRUjAUpvX5DMBAJz2QqyfTdLhXCfhfOrugl2FQtSaBxIPcKcyw==}
+    dev: false
 
   /@humanwhocodes/config-array@0.11.14:
     resolution: {integrity: sha512-3T8LkOmg45BV5FICb15QQMsyUSWrQ8AygVfC7ZG32zOalnqrilm018ZVCw0eapXux8FtA33q8PSRSstjee3jSg==}
