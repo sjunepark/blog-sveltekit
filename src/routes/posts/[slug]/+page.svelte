@@ -9,7 +9,9 @@
 	<meta property="og:title" content={data.meta.title} />
 </svelte:head>
 
-<article class="prose prose-sm prose-stone mx-auto dark:prose-invert sm:prose-base lg:prose-lg">
+<article
+	class="prose prose-sm prose-stone mx-auto w-full dark:prose-invert sm:prose-base lg:prose-lg"
+>
 	<!-- Title -->
 	<hgroup>
 		<h1>{data.meta.title}</h1>
