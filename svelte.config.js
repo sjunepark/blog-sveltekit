@@ -5,6 +5,7 @@ import { getHighlighter } from 'shiki';
 import remarkUnwrapImages from 'remark-unwrap-images';
 import remarkToc from 'remark-toc';
 import rehypeSlug from 'rehype-slug';
+import { transformerNotationHighlight } from '@shikijs/transformers';
 
 /** @type {import('mdsvex').MdsvexOptions} */
 const mdsvexOptions = {
@@ -12,11 +13,20 @@ const mdsvexOptions = {
 	highlight: {
 		highlighter: async (code, lang = 'text') => {
 			const highlighter = await getHighlighter({
-				themes: ['dracula-soft'],
-				langs: ['javascript', 'typescript', 'go']
+				themes: ['dracula-soft', 'one-dark-pro', 'light-plus', 'dark-plus'],
+				langs: ['javascript', 'typescript', 'go', 'shell']
 			});
-			await highlighter.loadLanguage('javascript', 'typescript', 'go');
-			const html = escapeSvelte(highlighter.codeToHtml(code, { lang, theme: 'dracula-soft' }));
+			await highlighter.loadLanguage('javascript', 'typescript', 'go', 'shell');
+			const html = escapeSvelte(
+				highlighter.codeToHtml(code, {
+					lang,
+					themes: {
+						dark: 'dark-plus',
+						light: 'light-plus'
+					},
+					transformers: [transformerNotationHighlight()]
+				})
+			);
 			return `{@html \`${html}\`}`;
 		}
 	},

@@ -71,6 +71,15 @@ const config = {
 						},
 						'blockquote p:last-of-type::after': {
 							content: ''
+						},
+						pre: {
+							outline: 'solid',
+							outlineWidth: '1px',
+							outlineColor: 'hsl(var(--border) / 1)',
+							paddingTop: '0.75em',
+							paddingRight: '0.75em',
+							paddingBottom: '0.75em',
+							paddingLeft: '0.75em'
 						}
 					}
 				}
