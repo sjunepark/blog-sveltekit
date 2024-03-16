@@ -5,7 +5,10 @@ import { getHighlighter } from 'shiki';
 import remarkUnwrapImages from 'remark-unwrap-images';
 import remarkToc from 'remark-toc';
 import rehypeSlug from 'rehype-slug';
-import { transformerNotationHighlight } from '@shikijs/transformers';
+import {
+	transformerNotationHighlight,
+	transformerNotationWordHighlight
+} from '@shikijs/transformers';
 
 /** @type {import('mdsvex').MdsvexOptions} */
 const mdsvexOptions = {
@@ -24,7 +27,7 @@ const mdsvexOptions = {
 						dark: 'dark-plus',
 						light: 'light-plus'
 					},
-					transformers: [transformerNotationHighlight()]
+					transformers: [transformerNotationHighlight(), transformerNotationWordHighlight()]
 				})
 			);
 			return `{@html \`${html}\`}`;

@@ -72,3 +72,9 @@
 		padding: 0 0.75em;
 	}
 }
+
+/* todo: check why this doesn't work in @layer base */
+.highlighted-word {
+	background-color: hsl(var(--primary) / 0.2);
+	padding: 0.25em 0;
+}

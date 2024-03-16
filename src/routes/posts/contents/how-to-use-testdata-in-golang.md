@@ -27,7 +27,7 @@ As so, it's good practice to store files that are used in tests in a `testdata` 
     └── myPackage
         ├── myPackage.go
         ├── myPackage_test.go
-        └── testdata // [!code highlight]
+        └── testdata // [!code highlight:2]
             └── fixture.txt
 ```
 
@@ -44,6 +44,7 @@ import (
   "testing"
 )
 
+// [!code word:"testdata"]
 func TestMyFunction(t *testing.T) {
   data, err := ioutil.ReadFile(filepath.Join("testdata", "fixture.txt"))
   if err != nil {
