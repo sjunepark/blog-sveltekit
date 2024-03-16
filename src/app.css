@@ -65,11 +65,20 @@
 	}
 
 	pre.has-highlighted span.highlighted {
-		width: calc(100% + 1.5em);
+		width: calc(100% + 1.5rem);
 		display: inline-block;
 		background-color: hsl(var(--primary) / 0.2);
-		margin: 0 -0.75em;
-		padding: 0 0.75em;
+		padding: 0 0.75rem;
+		margin-left: -0.75rem;
+	}
+
+	@media (min-width: 1024px) {
+		pre.has-highlighted span.highlighted {
+			width: calc(100% + 3rem);
+			padding: 0.14em 1.5rem;
+			margin-top: -0.14em;
+			margin-left: -1.5rem;
+		}
 	}
 }
 

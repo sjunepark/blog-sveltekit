@@ -76,10 +76,10 @@ const config = {
 							outline: 'solid',
 							outlineWidth: '1px',
 							outlineColor: 'hsl(var(--border) / 1)',
-							paddingTop: '0.75em',
-							paddingRight: '0.75em',
-							paddingBottom: '0.75em',
-							paddingLeft: '0.75em'
+							paddingTop: '0.75rem',
+							paddingRight: '0.75rem',
+							paddingBottom: '0.75rem',
+							paddingLeft: '0.75rem'
 						}
 					}
 				}
