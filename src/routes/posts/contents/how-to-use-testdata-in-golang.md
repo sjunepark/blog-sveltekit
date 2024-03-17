@@ -44,8 +44,7 @@ import (
   "testing"
 )
 
-// [!code word:"testdata"]
-func TestMyFunction(t *testing.T) {
+func TestMyFunction(t *testing.T) { // [!code word:"testdata"]
   data, err := ioutil.ReadFile(filepath.Join("testdata", "fixture.txt"))
   if err != nil {
     t.Fatal(err)
