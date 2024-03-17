@@ -11,9 +11,9 @@
 	--card-foreground: 20 14.3% 4.1%;
 	--popover: 0 0% 100%;
 	--popover-foreground: 20 14.3% 4.1%;
-	--primary: 207 100% 30%;
+	--primary: 208 100% 30%;
 	--primary-foreground: 60 9.1% 97.8%;
-	--secondary: 207 10% 93%;
+	--secondary: 208 10% 93%;
 	--secondary-foreground: 24 9.8% 8%;
 	--muted: 60 4.8% 95.9%;
 	--muted-foreground: 25 5.3% 44.7%;
@@ -32,7 +32,7 @@
 	--pre-padding-y-lg: 0.14em;
 
 	/* Markdown code block */
-	--code-highlight: 48 100% 93%;
+	--code-highlight: 208 100% 88%;
 
 	/* Highlighted */
 	--highlighted-word-padding-y: 0.25em;
@@ -60,7 +60,7 @@
 	--ring: 35.5 91.7% 32.9%;
 
 	/* Markdown code block */
-	--code-highlight: 214 60% 24%;
+	--code-highlight: 208 60% 24%;
 }
 
 /* shiki theme */
