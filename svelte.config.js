@@ -7,8 +7,10 @@ import remarkToc from 'remark-toc';
 import rehypeSlug from 'rehype-slug';
 import {
 	transformerNotationHighlight,
-	transformerNotationWordHighlight
+	transformerNotationWordHighlight,
+	transformerNotationDiff
 } from '@shikijs/transformers';
+import rehypeExternalLinks from 'rehype-external-links';
 
 /** @type {import('mdsvex').MdsvexOptions} */
 const mdsvexOptions = {
@@ -16,7 +18,7 @@ const mdsvexOptions = {
 	highlight: {
 		highlighter: async (code, lang = 'text') => {
 			const highlighter = await getHighlighter({
-				themes: ['dracula-soft', 'one-dark-pro', 'light-plus', 'dark-plus'],
+				themes: ['light-plus', 'dark-plus'],
 				langs: ['javascript', 'typescript', 'go', 'shell']
 			});
 			await highlighter.loadLanguage('javascript', 'typescript', 'go', 'shell');
@@ -27,14 +29,21 @@ const mdsvexOptions = {
 						dark: 'dark-plus',
 						light: 'light-plus'
 					},
-					transformers: [transformerNotationHighlight(), transformerNotationWordHighlight()]
+					transformers: [
+						transformerNotationHighlight(),
+						transformerNotationWordHighlight(),
+						transformerNotationDiff()
+					]
 				})
 			);
 			return `{@html \`${html}\`}`;
 		}
 	},
 	remarkPlugins: [remarkUnwrapImages, [remarkToc, { tight: true }]],
-	rehypePlugins: [rehypeSlug]
+	rehypePlugins: [
+		rehypeSlug,
+		[rehypeExternalLinks, { target: '_blank', rel: ['noopener', 'noreferrer'] }]
+	]
 };
 
 /**

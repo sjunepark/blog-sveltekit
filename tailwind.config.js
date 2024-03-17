@@ -63,9 +63,6 @@ const config = {
 			typography: (theme) => ({
 				DEFAULT: {
 					css: {
-						blockquote: {
-							fontStyle: 'normal'
-						},
 						'blockquote p:first-of-type::before': {
 							content: ''
 						},
